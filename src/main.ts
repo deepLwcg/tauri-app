@@ -8,7 +8,10 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
 import 'dayjs/locale/zh-cn';
 import 'element-plus/theme-chalk/dark/css-vars.css';
 
+import './assets/font.less';
+
 const app = createApp(App);
+
 app.use(store);
 app.use(router);
 app.use(ElementPlus, {

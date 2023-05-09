@@ -11,12 +11,14 @@
 </script>
 
 <style lang="less">
+  html,
+  body,
   #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
+    font-family: cgwcc, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
   }
 
   nav {

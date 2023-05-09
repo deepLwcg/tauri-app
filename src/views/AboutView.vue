@@ -1,5 +1,14 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <VideoPlayer />
   </div>
 </template>
+<script setup lang="ts">
+  import VideoPlayer from '../components/VideoPlayer.vue';
+</script>
+<style scoped>
+  .about {
+    height: 100%;
+    width: 100%;
+  }
+</style>

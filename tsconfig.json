@@ -10,13 +10,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+    "noImplicitAny": false,
+    "allowJs": true,
     "lib": [
       "ESNext",
       "DOM"
     ],
     "skipLibCheck": true,
     "types": [
-      "element-plus/global"
+      "element-plus/global",
+      "node"
     ]
   },
   "include": [
