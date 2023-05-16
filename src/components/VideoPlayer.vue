@@ -1,5 +1,5 @@
 <template>
-  <div id="dplayer" ref="player"></div>
+  <div ref="player" class="dplayer"></div>
 </template>
 <script setup lang="ts">
   import Hls from 'hls.js';
@@ -14,7 +14,7 @@
   const player = ref<HTMLElement | null>(null);
   onMounted(() => {
     const dp = new DPlayer({
-      container: document.getElementById('dplayer'),
+      container: <HTMLElement | null>player.value,
       lang: 'zh-cn',
       video: {
         url: 'https://vip.lz-cdn17.com/20230511/12010_751767f8/index.m3u8',
@@ -39,8 +39,8 @@
   });
 </script>
 
-<style scoped>
-  #dplayer {
+<style scoped lang="less">
+  .dplayer {
     width: 100%;
     height: 100%;
     background: #2c3e50;
