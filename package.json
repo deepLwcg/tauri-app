@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@tauri-apps/api": "^1.3.0",
+    "dplayer": "^1.27.1",
     "element-plus": "^2.3.4",
+    "hls.js": "^1.4.3",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
     "vuex": "^4.1.0"
@@ -20,6 +22,7 @@
     "@babel/core": "^7.21.4",
     "@babel/eslint-parser": "^7.21.3",
     "@tauri-apps/cli": "^1.2.3",
+    "@types/dplayer": "^1.25.2",
     "@types/node": "^18.7.10",
     "@typescript-eslint/eslint-plugin": "^5.59.1",
     "@typescript-eslint/parser": "^5.59.1",
