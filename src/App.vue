@@ -1,17 +1,17 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <el-button @click="toggleDark()">主题</el-button>
-    <el-button @click="open_window()">新窗口</el-button>
-  </nav>
+  <!--  <nav>-->
+  <!--    <router-link to="/">Home</router-link> |-->
+  <!--    <router-link to="/about">About</router-link>-->
+  <!--    <el-button @click="toggleDark()">主题</el-button>-->
+  <!--    <el-button @click="open_window()">新窗口</el-button>-->
+  <!--  </nav>-->
   <router-view />
 </template>
 <script lang="ts" setup>
   import { toggleDark } from './composables';
   import { invoke } from '@tauri-apps/api/tauri';
   const open_window = () => {
-    invoke('open_player_window', { title: '新窗口', url: 'http://127.0.0.1:1420/player' });
+    invoke('open_player_window', { title: '新窗口', url: '/player' });
   };
 </script>
 

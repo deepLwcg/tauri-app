@@ -1,0 +1,146 @@
+name: 淡墨客视频
+user:
+  id: 738e9493-2844-44d5-b337-061ab4c30330
+  username: wcg
+  password: $argon2i$v=19$m=4096,t=3,p=1$dUtGQ3lHWkFuMDdNVG1scw$yPSe559t6LaEu49JnRJtnBzja/0uX+1g91wV5kl0u6c
+sites:
+  - id: 1
+    name: 资源站壹
+    original_name: 闪电资源站
+    url: https://sdzyapi.com/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://www.shan05.com/help/
+  - id: 2
+    name: 资源站贰
+    original_name: 红牛资源站
+    url: https://www.hongniuzy2.com/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://www.hongniuzy.com/help/
+  - id: 3
+    name: 资源站叁
+    original_name: 无尽资源站
+    url: https://api.wujinapi.me/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: http://help.wujinapi.me/
+  - id: 4
+    name: 资源站肆
+    original_name: 速更资源站
+    url: https://www.sugengzy.cn/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://www.sugengzy.cn/template/ziyuan/html/help/index.html
+  - id: 5
+    name: 资源站伍
+    original_name: 光速资源站
+    url: https://api.guangsuapi.com/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://www.guangsuzy.com/help/
+  - id: 6
+    name: 资源站陆
+    original_name: 百度资源站
+    url: https://api.apibdzy.com/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: http://help.apibdzy.com/
+  - id: 7
+    name: 资源站柒
+    original_name: U酷资源站
+    url: https://api.ukuapi.com/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://ukuzy0.com/help/
+  - id: 8
+    name: 资源站捌
+    original_name: 金鹰资源站
+    url: https://jyzyapi.com/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://jinyingzy.com/help/
+  - id: 9
+    name: 资源站玖
+    original_name: 天空资源站
+    url: https://api.tiankongapi.com/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://help.tiankongapi.com/
+  - id: 10
+    name: 资源站拾
+    original_name: 淘片资源站
+    url: https://taopianapi.com/home/cjapi/as/mc10/vod/xml
+    type: xml
+    resolve_address:
+    help: https://www.taopianzy.com/home/help.html
+  - id: 11
+    name: 资源站拾壹
+    original_name: 卧龙资源站
+    url: https://collect.wolongzyw.com/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: http://wolongzyw.com/index.php/label/help1.html
+  - id: 12
+    name: 资源站拾贰
+    original_name: 新浪资源站
+    url: https://api.xinlangapi.com/xinlangapi.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://www.xinlangzy.com/help/
+  - id: 13
+    name: 资源站拾叁
+    original_name: 快车资源站
+    url: https://caiji.kczyapi.com/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://help.kczyapi.com/
+  - id: 14
+    name: 资源站拾肆
+    original_name: 酷点资源站
+    url: https://kudian10.com/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://www.kudian8.com/index.php/label/help.html
+  - id: 15
+    name: 资源站拾伍
+    original_name: 酷豆资源站
+    url: http://api.kdapi.info/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://kudouzy.com/index.php/label/help.html
+  - id: 16
+    name: 资源站拾陆
+    original_name: Tom资源站
+    url: https://tomziyuan.com/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://tomziyuan.com
+  - id: 17
+    name: 资源站拾柒
+    original_name: Fox资源站
+    url: https://api.foxzyapi.com/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://help.foxzyapi.com/
+  - id: 18
+    name: 资源站拾捌
+    original_name: 飞速资源站
+    url: https://www.feisuzyapi.com/api.php/provide/vod/at/xml
+    type: xml
+    resolve_address:
+    help: https://help.feisuzyapi.com/
+  - id: 19
+    name: 资源站拾玖
+    original_name: 鱼乐资源站
+    url: https://api.yulecj.com/api.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://help.yulecj.com/
+  - id: 20
+    name: 资源站贰拾
+    original_name: 高清资源站
+    url: https://api.1080zyku.com/inc/api_all.php/provide/vod/at/xml/
+    type: xml
+    resolve_address:
+    help: https://1080zyk4.com/help/
