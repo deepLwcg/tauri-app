@@ -6,18 +6,20 @@
   import DPlayer, { DPlayerEvents } from 'dplayer';
   import { ref, onMounted } from 'vue';
   import { invoke } from '@tauri-apps/api/tauri';
-
+  const props = defineProps({
+    url: { type: String, required: true },
+  });
   const toggle_fullscreen = () => {
     invoke('toggle_fullscreen');
   };
-
   const player = ref<HTMLElement | null>(null);
-  onMounted(() => {
+
+  const play_video = (url: string) => {
     const dp = new DPlayer({
       container: <HTMLElement | null>player.value,
       lang: 'zh-cn',
       video: {
-        url: 'https://vip.lz-cdn17.com/20230511/12010_751767f8/index.m3u8',
+        url: url,
         type: 'customHls',
         customType: {
           customHls: function (video) {
@@ -36,6 +38,11 @@
       console.log('fullscreen_cancel');
       toggle_fullscreen();
     });
+  };
+
+  onMounted(() => {
+    console.log(props.url);
+    play_video(props.url);
   });
 </script>
 

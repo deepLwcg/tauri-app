@@ -10,12 +10,14 @@
     </div>
     <div v-if="videos" class="video-list">
       <div v-for="video in videos.videos" :key="video.id" class="video-item">
-        <el-card :body-style="{ padding: '0px' }">
-          <img :src="video.pic" class="image" />
-          <div style="padding: 14px">
-            <span>{{ video.name }}</span>
+        <div class="video-content" @click="open_video(video.id, video.name)">
+          <div class="video-img">
+            <img :src="video.pic" :alt="video.name" />
           </div>
-        </el-card>
+          <div class="video-title">{{ video.name }}</div>
+          <div class="video-note">{{ video.note }}</div>
+          <div class="video-actor">{{ video.actor }}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -26,7 +28,6 @@
   import { Back } from '@element-plus/icons-vue';
   import { invoke } from '@tauri-apps/api/tauri';
   import { onMounted, ref } from 'vue';
-  import { s } from '@tauri-apps/api/shell-efff51a2';
 
   interface Menu {
     id: number;
@@ -74,6 +75,10 @@
     });
   };
 
+  const open_video = (vid: number, title: string) => {
+    invoke('open_player_window', { title: title, url: '/player?id=' + id + '&vid=' + vid });
+  };
+
   onMounted(() => {
     get_videos_type();
     get_videos();
@@ -99,7 +104,45 @@
   .video-list {
     padding: 10px 20px;
   }
+  .video-list::after {
+    display: block;
+    content: ' ';
+    clear: both;
+  }
   .video-item {
-    display: inline-block;
+    width: 20%;
+    float: left;
+  }
+  .video-content {
+    margin: 5px 5px;
+    cursor: pointer;
+    overflow: hidden;
+    line-height: 24px;
+  }
+  .video-img {
+    width: 100%;
+    height: 235px;
+    line-height: 235px;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #222;
+  }
+  .video-img > img {
+    width: 100%;
+    vertical-align: middle;
+  }
+  .video-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 3px 0 2px 0;
+  }
+  .video-actor,
+  .video-note {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 10px;
+    color: #6b6b6b;
   }
 </style>

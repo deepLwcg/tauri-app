@@ -8,8 +8,8 @@ pub(crate) mod config;
 use quick_xml::DeError;
 use reqwest::Error;
 use tauri::{Manager, WindowBuilder, Wry};
-use crate::client::api::{get_menus, get_videos_page, read_xml_list, read_xml_videos, request_get};
-use crate::client::{Menu, RssClass, RssVideos, Video, Videos};
+use crate::client::api::{get_details, get_menus, get_videos_page, read_xml_details, read_xml_list, read_xml_videos, request_get};
+use crate::client::{Detail, Menu, RssClass, RssVideos, Video, Videos};
 use crate::config::Site;
 use crate::config::yaml::CONFIG;
 
@@ -90,10 +90,35 @@ async fn get_videos(id: u32) -> Option<Videos<Video>> {
     }
 }
 
+#[tauri::command]
+async fn open_video(id: u32, vid: u32) -> Option<Detail> {
+    let configs = CONFIG::sites_map();
+    let site = configs.get(&id).unwrap();
+    let url = format!("{}?ac=videolist&ids={}", site.url, vid.to_string());
+    let xml_result = request_get(url.as_str()).await;
+    match xml_result {
+        Ok(xml) => {
+            let result = read_xml_details(xml);
+            match result {
+                Ok(rss) => {
+                    let mut videos = get_details(rss).unwrap();
+                    if videos.len() > 0 {
+                        Some(videos.remove(0))
+                    } else {
+                        None
+                    }
+                }
+                Err(_) => None
+            }
+        }
+        Err(_) => None
+    }
+}
+
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet,toggle_fullscreen,open_player_window,get_sites,get_videos_type,get_videos])
+        .invoke_handler(tauri::generate_handler![greet,toggle_fullscreen,open_player_window,get_sites,get_videos_type,get_videos,open_video])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

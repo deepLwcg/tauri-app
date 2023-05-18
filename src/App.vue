@@ -5,14 +5,14 @@
   <!--    <el-button @click="toggleDark()">主题</el-button>-->
   <!--    <el-button @click="open_window()">新窗口</el-button>-->
   <!--  </nav>-->
+  <div class="setting-theme">
+    <el-button :icon="Sunny" size="large" circle @click="toggleDark()" />
+  </div>
   <router-view />
 </template>
 <script lang="ts" setup>
   import { toggleDark } from './composables';
-  import { invoke } from '@tauri-apps/api/tauri';
-  const open_window = () => {
-    invoke('open_player_window', { title: '新窗口', url: '/player' });
-  };
+  import { Sunny } from '@element-plus/icons-vue';
 </script>
 
 <style lang="less">
@@ -25,17 +25,12 @@
     padding: 0;
     margin: 0;
   }
-
-  nav {
-    padding: 30px;
-
-    a {
-      font-weight: bold;
-      color: #2c3e50;
-
-      &.router-link-exact-active {
-        color: #42b983;
-      }
-    }
+  .setting-theme {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+  }
+  .dplayer-full > .dplayer-full-in-icon {
+    display: none !important;
   }
 </style>
