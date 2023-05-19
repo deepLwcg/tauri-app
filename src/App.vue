@@ -1,10 +1,4 @@
 <template>
-  <!--  <nav>-->
-  <!--    <router-link to="/">Home</router-link> |-->
-  <!--    <router-link to="/about">About</router-link>-->
-  <!--    <el-button @click="toggleDark()">主题</el-button>-->
-  <!--    <el-button @click="open_window()">新窗口</el-button>-->
-  <!--  </nav>-->
   <div class="setting-theme">
     <el-button :icon="Sunny" size="large" circle @click="toggleDark()" />
   </div>
